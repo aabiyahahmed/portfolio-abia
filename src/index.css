@@ -12,13 +12,22 @@ body{
   height: 45px;
   font-size: medium;
   background-color: #253745;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
 }
 
 .header-ul{
+  
   list-style-type: none;
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  width: 100%; /* Ensure full width */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center;
   position: fixed;
   top: 0;
   
@@ -26,7 +35,9 @@ body{
 }
 
 .header-li{
- float: left;
+  float: none; /* Remove float */
+  display: inline-block; /* Keep them in a row */
+  margin: 0 15px; /* Add spacing */
 }
 
 .header-li a{
@@ -188,9 +199,10 @@ body{
   background-color: #4A5C6A;
   color: #CCD0CF;
   padding: 50px 20px;
-  width: 100%;
-  margin: 100px auto; 
-  border-radius: 30px; 
+  width: 90%; /* Prevents it from stretching too much */
+  max-width: 600px; /* Ensures it doesn’t get too wide */
+  margin: 100px auto; /* Centers it */
+  border-radius: 30px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -313,9 +325,9 @@ body{
   }
 
   .contact-section {
-    width: 90%;
+    width: 80%; /* Smaller width */
     padding: 30px;
-    margin: 50px 20px;
+    margin: 50px auto; /* Keeps it centered */
   }
 
   .social-links {
