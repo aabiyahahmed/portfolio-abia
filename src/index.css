@@ -60,7 +60,7 @@ body{
 .text{
   margin: 15px;
   padding: 10px;
-  color: #071739;
+  color: #06141B;
 }
 
 .name{
@@ -220,6 +220,16 @@ body{
 
 
 @media (max-width: 1024px) {
+
+  body{
+    background-color: #253745;
+    color: black;
+  }
+
+  .text{
+    color: black;
+  }
+
   .home-container {
     flex-direction: column;
     align-items: center;
@@ -234,6 +244,15 @@ body{
 
 
 @media (max-width: 768px) {
+  body{
+    background-color: #253745;
+    color: black;
+  }
+
+  .text{
+    color: black;
+  }
+
   .navbar {
     flex-direction: column;
     height: auto;
@@ -296,7 +315,7 @@ body{
   .contact-section {
     width: 90%;
     padding: 30px;
-    margin: 50px auto;
+    margin: 50px 20px;
   }
 
   .social-links {
@@ -311,6 +330,16 @@ body{
 
 
 @media (max-width: 480px) {
+
+  body{
+    background-color: #253745;
+    color: black;
+  }
+
+  .text{
+    color: black;
+  }
+
   .name {
     font-size: 2rem; 
   }
@@ -331,6 +360,10 @@ body{
 
   .contact-section h2 {
     font-size: 28px;
+  }
+
+  .contact-section{
+    margin: 10px;
   }
 
   .social-icon {
