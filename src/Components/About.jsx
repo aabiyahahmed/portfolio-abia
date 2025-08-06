@@ -9,6 +9,9 @@ const skillList = [
   "React",
   "Web Designing",
   "Problem Solving",
+  "doing ur mom",
+  "petting cars",
+  "procastination babyyyy",
   "Team player",
 ]
 

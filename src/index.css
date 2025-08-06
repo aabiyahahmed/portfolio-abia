@@ -20,6 +20,38 @@ body{
 
 }
 
+.navbar {
+  background-color: #253745;
+  padding: 12px;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav-list li a:hover,
+.nav-list li.active a {
+  color: #4B6382;
+}
+
+
 .header-ul{
   
   list-style-type: none;

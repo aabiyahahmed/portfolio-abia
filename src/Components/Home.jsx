@@ -1,6 +1,8 @@
 import React from 'react'
 import profilepic from '../assets/profile-pic.jpg'
-const Home = ({name, title}) => {
+const name = "Aabiyah Uroob Ahmed"
+const title ="Front End Developer"
+const Home = () => {
   return (
     <div className="home-container">
         <img className="profile" src={profilepic} alt="profile picture" />
