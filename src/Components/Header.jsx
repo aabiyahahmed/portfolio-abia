@@ -8,6 +8,7 @@ import Contact from "./Contact.jsx";
 const Header = () => {
 
   const [activeSection, setActiveSection] = useState('home');
+  const [isOpen, setIsOpen] = useState(false); // for mobile menu
 
   useEffect(()=>{
 
@@ -37,24 +38,40 @@ const Header = () => {
       window.removeEventListener('scroll', handleScroll)
     }
   }, [])
+
   return (
     <>
     <div className="navbar">
+       {/* Logo / Brand */}
+      <div className="logo">Aabiyah Ahmed</div>
+
+      {/* Hamburger icon (mobile only) */}
+      <div className={`hamburger ${isOpen ? "open" : ""}`} onClick={() => setIsOpen(!isOpen)}>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
         
-      <ul className="nav-list">
-        <li className={activeSection === 'home' ? 'active' : ''}>
+      <ul className={`nav-list ${isOpen ? "open" : ""}`}>
+        <li className={activeSection === 'home' ? 'active' : ''}
+        onClick={() => setIsOpen(false)}>
           <a href="#home">Home</a>
         </li>
-        <li className={activeSection=== 'about' ? 'active' : ''}>
+        <li className={activeSection=== 'about' ? 'active' : ''}
+        onClick={() => setIsOpen(false)}>
           <a href="#about">About</a>
         </li>
-        <li className={activeSection === 'portfolio' ? 'active' : ''}>
+        <li className={activeSection === 'portfolio' ? 'active' : ''}
+        onClick={() => setIsOpen(false)}>
           <a href="#portfolio">Portfolio</a>
         </li>
-        <li className={activeSection=== 'contact' ? 'active' : ''}>
+        <li className={activeSection=== 'contact' ? 'active' : ''}
+        onClick={() => setIsOpen(false)}>
          <a href="#contact">Contact</a>
         </li>
       </ul>
+
 
     </div>
     

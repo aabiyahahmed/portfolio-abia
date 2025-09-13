@@ -9,7 +9,7 @@ const skillList = [
   "React",
   "Web Designing",
   "Problem Solving",
-  "doing ur mom",
+  "things...",
   "petting cars",
   "procastination babyyyy",
   "Team player",
@@ -17,10 +17,11 @@ const skillList = [
 
 const About = () => {
   return (
-    <div className="container-about">
-      <h1 className="heading">About me</h1>
+    <>
+      <h1 className="heading" style={{textAlign:"center", width: "100%", margin:"0px"}}>About me</h1>
       <hr />
-      <p className="desc">{description1}
+      <div className="container-about">
+      <p className="desc" style={{paddingLeft: "20px", width: "70%"}}>{description1}
         <br /> {description2}
       </p>
 
@@ -31,6 +32,9 @@ const About = () => {
         ))}
       </ul>
     </div>
+    <br /><br /> <br /><br /> 
+    
+  </>
   )
 }
 export default About

@@ -30,8 +30,9 @@ const projects = [
 
 const Portfolio = () => {
   return (
-    <section id="portfolio" className="portfolio-section">
-      <h1 className="heading">Portfolio</h1>
+    <>
+      <section id="portfolio" className="portfolio-section">
+      <h1 className="heading">Projects</h1>
       <div className="projects-container">
 
           {projects.map((project) => (
@@ -49,6 +50,8 @@ const Portfolio = () => {
           ))}
       </div>
   </section>
+    </>
+    
   )
 }
 
