@@ -22,7 +22,7 @@ const Header = () => {
         if (section) {
           const rect = section.getBoundingClientRect()
           console.log(rect)
-          if (rect.top <= 100 && rect.bottom >= 100) {
+          if (rect.top <= 400 && rect.bottom >= 400) {
             currentSection = id
             break;
           }

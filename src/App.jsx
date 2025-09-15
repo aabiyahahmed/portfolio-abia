@@ -17,7 +17,7 @@ function App() {
           <div id= "portfolio"><Portfolio/></div>
           <div id= "contact"><Contact/></div>
       </main>
-      <SocialBar /> {/* <- Always visible */}
+      
       
 
     </>
