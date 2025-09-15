@@ -4,10 +4,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 :root{
   --color-bg: #F1ecdb;
-  --color-dark: #3c1b0f;
-  --color-medium: #868859;
-  --color-accent1: #7e2625;
-  --color-accent2: #292f17;
+  --color-dark: #000000;
+  --color-medium: hsla(0, 0%, 100%, 0.255);
+  --color-accent1: #c83f76;
+  --color-accent2: #955bd0;
 
 }
 
@@ -22,9 +22,10 @@ html{
 body{
   margin: 0;
   font-family: 'Inter';
-  background-color: var(--color-bg);
   color: var(--color-dark);
   overflow: auto;
+  background: #C3C7F4;
+  background: linear-gradient(180deg, rgba(195, 199, 244, 1) 0%, rgba(200, 168, 233, 1) 24%, rgba(227, 170, 221, 1) 44%, rgba(246, 188, 186, 1) 66%, rgba(242, 221, 220, 1) 85%, rgba(244, 231, 251, 1) 99%);
 
 }
 
@@ -41,8 +42,7 @@ h1,h2,h3{
   width: 100%;
   height: 40px;
   font-size: medium;
-  background-color: var(--color-bg);
-  position: fixed;
+  position: relative;
   margin: 0;
   top: 0;
   z-index: 1000;
