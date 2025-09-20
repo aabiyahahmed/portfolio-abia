@@ -16,7 +16,7 @@ const projects = [
   {
     id: 3,
     title: "Weather app for Mobile",
-    description: "A weather forcast app for mobile users using React Native.",
+    description: "A weather forecast app for mobile users using React Native.",
     link: "https://github.com/aabiyahahmed/weather-app-react-native",
   },
   {
@@ -37,7 +37,7 @@ const Portfolio = () => {
 
           {projects.map((project) => (
 
-          <div key={project.id} className="project-card">
+          <div key={project.id} className="project-card"  data-aos= "fade-up">
 
             <h3>{project.title}</h3>
             <p>{project.description}</p>

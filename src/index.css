@@ -2,12 +2,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Prata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root{
-  --color-bg: #F1ecdb;
-  --color-dark: #000000;
-  --color-medium: hsla(0, 0%, 100%, 0.255);
-  --color-accent1: #c83f76;
-  --color-accent2: #955bd0;
+  --color-bg: #020616;
+  --color-dark: #d7ba72;
+  --color-medium: hwb(54 45% 6% / 0.19);
+  --color-accent1: #e6c971;
+  --color-accent2: #f3f389;
 
 }
 
@@ -21,16 +26,16 @@ html{
 
 body{
   margin: 0;
-  font-family: 'Inter';
+  font-family: 'Karla';
   color: var(--color-dark);
   overflow: auto;
-  background: #C3C7F4;
-  background: linear-gradient(180deg, rgba(195, 199, 244, 1) 0%, rgba(200, 168, 233, 1) 24%, rgba(227, 170, 221, 1) 44%, rgba(246, 188, 186, 1) 66%, rgba(242, 221, 220, 1) 85%, rgba(244, 231, 251, 1) 99%);
+  background: var(--color-bg);
+ 
 
 }
 
 h1,h2,h3{
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Atkinson Hyperlegible', serif;
   font-weight: 600;
 }
 
@@ -42,11 +47,13 @@ h1,h2,h3{
   width: 100%;
   height: 40px;
   font-size: medium;
-  position: relative;
+  position: fixed;
   margin: 0;
   top: 0;
+  left: 0;
   z-index: 1000;
   padding: 10px;
+   background: var(--color-bg);
 
 }
 
@@ -109,10 +116,10 @@ h1,h2,h3{
   justify-content: center;
   align-items: center;
   gap: 40px;
-  padding-top:70px;
-  margin: 0 80px;         /* reduced margin for better scaling */
+  padding:50px;
+  margin: 80px;         /* reduced margin for better scaling */
   box-sizing: border-box;
-
+ 
  
 }
 
@@ -125,6 +132,26 @@ h1,h2,h3{
 
 }
 
+.typewriter {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid var(--color-accent1);
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  animation: typing 3.5s steps(30, end), blink 0.75s step-end;
+  width: fit-content;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+     from, to { border-color: transparent }
+    50% { border-color: var(--color-accent1) }
+}
+
+
 .text{
   margin: 10px;
   display: inline-block;
@@ -135,44 +162,47 @@ h1,h2,h3{
 
 .name{
   font-size: 3rem;
-  width: 100%;
-  font-weight: 500;
+  width:100%;
+  font-weight: 300;
   opacity: 0;
-  transform: translateX(-50px);
-  animation: slideIn 1.5s ease-out forwards;
 }
 
 .title{
   font-size: 2rem;
-  font-weight: 500;
+  font-weight: 300;
   opacity: 0;
-  animation: fadeIn 2s ease-in forwards 0.5s;
 }
 
-.resumeBtn {
+.btn {
   display: inline-block;
   padding: 10px 10px;
   margin: 8px;
-  background: var(--color-accent2);
-  color: var(--color-bg);
+  color: var(--color-dark);
   font-size: 14px;
   border-radius: 8px;
   text-decoration: none;
-  transition: background-color 0.3s ease;
+  transition: 0.3s ease;
+  border: 2px solid var(--color-accent1);
+  box-shadow: 0 0 5px var(--color-accent1), 0 0 10px var(--color-accent1), 0 0 15px var(--color-accent1);
 }
 
 .contactBtn{
-  background: var(--color-accent1)
+  background: var(--color-accent1);
+  color: var(--color-bg);
+}
+.contactBtn:hover{
+  background: var(--color-accent1);
+  color: var(--color-bg);
 }
 
-.resumeBtn:hover {
-  background: var(--color-accent1);
-
+.btn:hover {
+  box-shadow: 0 0 10px var(--color-accent1), 0 0 20px var(--color-accent1), 0 0 40px var(--color-accent1);
 }
 
 .heading {
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.5rem;
+  font-weight: 500;
   margin-bottom: 20px;
 }
 
@@ -196,17 +226,70 @@ h1,h2,h3{
     opacity: 1;
   }
 }
+
+/* --- Slide from Left --- */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* --- Slide from Top --- */
+@keyframes slideInTop {
+  from {
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Slide from Bottom --- */
+@keyframes slideInBottom {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Generic Class --- */
+.animate-left {
+  opacity: 0;
+  animation: slideInLeft 1s ease-out forwards;
+}
+
+.animate-top {
+  opacity: 0;
+  animation: slideInTop 1s ease-out forwards;
+}
+
+.animate-bottom {
+  opacity: 0;
+  animation: slideInBottom 1s ease-out forwards;
+}
+
+s
 .about-section {
   max-width: 1000px;
-  margin: 0 auto;
-  padding:  20px;
+  padding:  30px;
 }
 
 
 .intro {
   text-align: center;
   font-size: 1.1rem;
-  margin-bottom: 40px;
+  margin: 40px;
   color: var(--color-dark);
 }
 
@@ -214,14 +297,20 @@ h1,h2,h3{
   display: grid;
   grid-template-columns: 1fr 1fr; /* two columns */
   gap: 20px;
+  margin: 30px;
   margin-bottom: 40px;
 }
-
+.about-block{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content:center;
+  padding: 5px 40px;
+}
 .about-card {
   background: var(--color-medium);
   padding: 20px;
   margin: 10px 20px;
-  border-radius: 10px;
   box-shadow: 0px 4px 8px rgba(0,0,0,0.05);
 }
 
@@ -257,14 +346,15 @@ h1,h2,h3{
   flex-wrap: wrap;
   gap: 12px;
   text-align: center;
-    margin: 10px 20px; 
+  margin: auto; 
+  text-align: center;
 }
 .skills{
   text-align: center;
 }
 .skill-badge {
-  background: var(--color-accent1);
-  color: var(--color-bg);
+  background: var(--color-medium);
+  color: var(--color-accent1);
   padding: 8px 14px;
   border-radius: 20px;
   font-size: 0.9rem;
@@ -293,22 +383,16 @@ h1,h2,h3{
   color: var(--color-dark);
   padding: 20px;
   width: 270px;
-  border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s;
   text-align: center;
 }
 
-.project-card:hover {
-  transform: scale(1.05); 
-}
-
-
 .project-card a {
   display: inline-block;
   margin-top: 10px;
   padding: 8px 15px;
-  background-color: var(--color-accent2);
+  background-color: var(--color-accent1);
   color: var(--color-bg);
   text-decoration: none;
   border-radius: 8px;
@@ -350,21 +434,35 @@ h1,h2,h3{
 .contact-form input,
 .contact-form textarea {
   padding: 10px;
-  border: 1px solid var(--color-accent1);
+  border: none;
+  background: transparent;
+  backdrop-filter: blur(13px);
+  border-bottom: 2px solid var(--color-accent1);
+  outline: none;
   border-radius: 6px;
+  color: var(--color-accent2);
   
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: var(--color-accent1);        /* softer placeholder color */
+  opacity: 0.8;                       /* subtle */
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-bottom-color: var(--color-accent2); /* focus highlight */
 }
 
 .contact-form textarea{
   min-height: 100px;
-
- 
 }
 
 .contact-form button {
   padding: 12px;
-  background: var(--color-accent1);
-  color: #fff;
+  color: var(--color-accent1);
+  background-color: var(--color-bg);
   border: none;
   border-radius: 6px;
   cursor: pointer;
@@ -373,7 +471,8 @@ h1,h2,h3{
 }
 
 .contact-form button:hover {
-  background: var(--color-accent2);
+  background: var(--color-accent1);
+  color: var(--color-bg);
 }
 /*footer*/
 .footer {
@@ -525,7 +624,7 @@ h1,h2,h3{
   display: block;
   height: 2px;
   width: 100%;
-  background: var(--color-text, #000);
+  background: var(--color-accent1, #000);
   transition: all 0.3s ease-in-out;
 }
   .nav-list {
@@ -572,5 +671,6 @@ h1,h2,h3{
   .contact-details {
     max-width: 100%;
   }
+
 }
 
