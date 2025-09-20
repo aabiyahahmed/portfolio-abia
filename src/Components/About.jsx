@@ -41,7 +41,7 @@ const About = () => {
 
       {/* Experience + Education side by side */}
       <div className="about-grid">
-        <div className="about-card"  data-aos= "fade-right" >
+        <div className="about-card"  data-aos= "fade-up" >
           <h2>Experience</h2>
           <ul className="timeline">
             {experiences.map((exp, index) => (
@@ -54,7 +54,7 @@ const About = () => {
           </ul>
         </div>
 
-        <div className="about-card"  data-aos= "fade-left">
+        <div className="about-card"  data-aos= "fade-up">
           <h2>Education</h2>
           <ul className="timeline">
             {education.map((edu, index) => (
