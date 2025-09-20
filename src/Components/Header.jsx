@@ -1,43 +1,81 @@
 import React from 'react'
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Home from "./Home.jsx";
 import About from "./About.jsx";
 import Portfolio from "./Portfolio.jsx";
 import Contact from "./Contact.jsx";
 
-const userProps = {
-    name: "Aabiyah Ahmed",
-    title: "Front End Developer",
-    email:"aabiyah.uroob@gmail.com",
-    gitHub:"https://github.com/aabiyahahmed/",
-    linkedIn: "https://www.linkedin.com/in/aabiyah-ahmed/",
-    instagram: "https://www.instagram.com/ur0.0b/",
-  }
-
 const Header = () => {
 
-    const [activePage, setActivePage] = useState("home");
+  const [activeSection, setActiveSection] = useState('home');
+  const [isOpen, setIsOpen] = useState(false); // for mobile menu
+
+  useEffect(()=>{
+
+    const handleScroll = () => {
+      const sections = ['home', 'about', 'portfolio', 'contact']
+
+      let currentSection = 'home'
+
+      for (let id of sections) {
+        const section = document.getElementById(id)
+        if (section) {
+          const rect = section.getBoundingClientRect()
+          console.log(rect)
+          if (rect.top <= 400 && rect.bottom >= 400) {
+            currentSection = id
+            break;
+          }
+        }
+      }
+
+      setActiveSection(currentSection)
+    };
+
+    window.addEventListener('scroll', handleScroll)
+    handleScroll()
+    return()=>{
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
   return (
+    <>
     <div className="navbar">
-        
-            <ul className = "header-ul">
-                <li className = "header-li"><a href="#" 
-                    onClick={(e) => { e.preventDefault(); setActivePage("home"); }}>Home</a></li>
-                <li className = "header-li"><a href="#"
-                    onClick={(e) => { e.preventDefault(); setActivePage("about"); }}>About</a></li>
-                <li className = "header-li"><a href="#"
-                    onClick={(e) => { e.preventDefault(); setActivePage("portfolio"); }}>Portfolio</a></li>
-                <li className = "header-li"><a href="#"
-                    onClick={(e) => { e.preventDefault(); setActivePage("contact"); }}>Contact</a></li>
-            </ul>
+       {/* Logo / Brand */}
+      <div className="logo">Aabiyah Ahmed</div>
 
-        {activePage === "home" && <Home name = {userProps.name} title = {userProps.title}/>}
-        {activePage === "about" && <About />}
-        {activePage === "portfolio" && <Portfolio />}
-        {activePage === "contact" && <Contact />}
+      {/* Hamburger icon (mobile only) */}
+      <div className={`hamburger ${isOpen ? "open" : ""}`} onClick={() => setIsOpen(!isOpen)}>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+        
+      <ul className={`nav-list ${isOpen ? "open" : ""}`}>
+        <li className={activeSection === 'home' ? 'active' : ''}
+        onClick={() => setIsOpen(false)}>
+          <a href="#home">Home</a>
+        </li>
+        <li className={activeSection=== 'about' ? 'active' : ''}
+        onClick={() => setIsOpen(false)}>
+          <a href="#about">About</a>
+        </li>
+        <li className={activeSection === 'portfolio' ? 'active' : ''}
+        onClick={() => setIsOpen(false)}>
+          <a href="#portfolio">Portfolio</a>
+        </li>
+        <li className={activeSection=== 'contact' ? 'active' : ''}
+        onClick={() => setIsOpen(false)}>
+         <a href="#contact">Contact</a>
+        </li>
+      </ul>
+
 
     </div>
+    
+    </>
   )
 }
 
